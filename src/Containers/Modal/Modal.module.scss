@@ -1,0 +1,28 @@
+.Modal {
+  position: fixed;
+  z-index: 500;
+  color: #fff;
+  background-image: linear-gradient(to bottom right, #eb1010, #af2525, #fa8072);
+  width: 60%;
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  padding: 2rem;
+  left: 20vw;
+  top: 16vh;
+  transition: all 0.3s ease-in-out;
+
+  @media only screen and (max-width: 37.5em) {
+    padding: 1rem;
+    width: 60%;
+  }
+
+  &__Show {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+
+  &__Hide {
+    transform: translateY(0) scale(0);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,103 @@
+.LogInAndSignUp {
+  min-height: 92vh;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+  display: grid;
+
+  &_Icon {
+    width: 7rem;
+    height: 7rem;
+    fill: #cc3366;
+  }
+
+  &_Form {
+    width: 60%;
+    display: grid;
+    grid-gap: 1rem;
+    justify-items: center;
+    @media only screen and (max-width: 37.5em) {
+      & {
+        width: 90%;
+      }
+    }
+
+    &__Errormessage {
+      font-size: 1.6rem;
+      color: #ff0000;
+    }
+    &__Input {
+      width: 70%;
+      background-color: #a7a7a7;
+      @media only screen and (max-width: 37.5em) {
+        & {
+          width: 80%;
+        }
+      }
+      &_PasswordField {
+        width: 100%;
+        background-color: #a7a7a7;
+      }
+    }
+    &__PasswordContainer {
+      width: 70%;
+      position: relative;
+      @media only screen and (max-width: 37.5em) {
+        & {
+          width: 80%;
+        }
+      }
+    }
+
+    &__Button {
+      width: 30%;
+      margin-bottom: 2rem;
+    }
+
+    &__Icons {
+      margin-top: 0.7rem;
+      width: 3.3rem;
+      height: 3.3rem;
+      fill: #cc3366;
+
+      @media only screen and (max-width: 37.5em) {
+        & {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+      &_ShowHide {
+        width: 2.5rem;
+        position: absolute;
+        top: 0;
+        right: 1rem;
+        height: 2.5rem;
+        fill: #cc3366;
+        cursor: grab;
+
+        &:active {
+          cursor: grabbing;
+        }
+      }
+    }
+
+    &__HeaderContainer {
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      grid-gap: 0.5rem;
+    }
+
+    &__Link {
+      text-decoration: none;
+      font-size: 1.6rem;
+      border-bottom: 1px solid transparent;
+      color: #0000ff;
+      &:hover {
+        border-bottom: 1px solid #0000ff;
+      }
+      &:active {
+        color: #0000ff;
+      }
+    }
+  }
+}

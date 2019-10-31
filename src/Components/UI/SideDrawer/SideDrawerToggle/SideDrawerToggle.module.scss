@@ -1,0 +1,24 @@
+.SideDrawerToggle {
+  display: flex;
+  width: 4rem;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1rem 0;
+  margin-left: 1rem;
+  cursor: pointer;
+
+  & div {
+    height: 0.3rem;
+    width: 100%;
+    background-color: #fff;
+  }
+
+  @media only screen and (min-width: 56.25em) {
+    & {
+      display: none;
+    }
+  }
+}

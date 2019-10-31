@@ -1,0 +1,25 @@
+.SideDrawer {
+  left: 0;
+  top: 0;
+  position: fixed;
+  width: 40rem;
+  height: 100%;
+  max-width: 70%;
+  z-index: 100;
+  background-image: linear-gradient(to bottom right, #333f4b, #36534f, #3d615e);
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+
+  @media only screen and (min-width: 56.25em) {
+    & {
+      display: none;
+    }
+  }
+}
+.Open {
+  transform: translateX(0);
+}
+.Close {
+  transform: translateX(-100%);
+}
