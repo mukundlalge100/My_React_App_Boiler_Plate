@@ -1,37 +1,19 @@
-import React, { Component, Suspense, lazy } from "react";
+import React, { Component, Suspense } from "react";
 import { Route, Redirect, Switch, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import Loader from "./Components/UI/Loader/Loader";
-import Navbar from "./Containers/Layouts/Navbar/Navbar";
-import Footer from "./Components/Layouts/Footer/Footer";
-import * as actions from "./store/Actions/IndexAction";
-//STYLLING IMPORTS
 import classes from "./App.module.scss";
 
 import PageNotFound from "./Components/PageNotFound/PageNotFound";
 
-const LogIn = lazy(() => import("./Containers/Auth/LogIn/LogIn"));
-const SignUp = lazy(() => import("./Containers/Auth/SignUp/SignUp"));
-const NewPassword = lazy(() =>
-  import("./Containers/Auth/NewPassword/NewPassword")
-);
-
-const ResetPassword = lazy(() =>
-  import("./Containers/Auth/ResetPassword/ResetPassword")
-);
-// ASYNC LAZY COMPONENTS CHUNKS ...
-
 class App extends Component {
-  componentDidMount = () => {
-    this.props.onAuthTryToLogIn(this.props.history);
-  };
   render() {
     let routes;
     if (this.props.isAuthenticated) {
       routes = (
         // PRIVATE ROUTES ...
         <Switch>
-          //ALL ROUTES ....
+          {/* ALL ROUTES ... */}
           <Route exact path="/pageNotFound" component={PageNotFound} />
           <Redirect exact to="/pageNotFound" />
         </Switch>
@@ -40,10 +22,7 @@ class App extends Component {
       routes = (
         // PUBLIC ROUTES ...
         <Switch>
-          <Route exact path="/login" component={LogIn} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/reset-password/:token" component={NewPassword} />
-          <Route exact path="/reset-password" component={ResetPassword} />
+          {/* ALL ROUTES ... */}
           <Route exact path="/pageNotFound" component={PageNotFound} />
           <Redirect exact to="/pageNotFound" />
         </Switch>
@@ -57,11 +36,8 @@ class App extends Component {
               <Loader />
             </div>
           }
-        >
-          <Navbar />
-          {routes}
-          <Footer />
-        </Suspense>
+        ></Suspense>
+        <h1>Hi How are you!!</h1>
       </main>
     );
   }
@@ -72,9 +48,7 @@ const mapStateToProps = state => {
   };
 };
 const mapDispatchToProps = dispatch => {
-  return {
-    onAuthTryToLogIn: history => dispatch(actions.authCheckLogInState(history))
-  };
+  return {};
 };
 
 export default connect(
